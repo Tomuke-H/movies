@@ -1,6 +1,6 @@
 require "test_helper"
 
-class Api::CommentsControllerTest < ActionDispatch::IntegrationTest
+class Api::ReviewsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

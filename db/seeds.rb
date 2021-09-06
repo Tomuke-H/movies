@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'faker'
+
+Movie.destroy_all
+Review.destroy_all
+
+10.times do 
+    m = Movie.create(title: Faker::Movie.title, genre: Faker::Book.genre)
+    3.times do 
+        m.reviews.create(text: Faker::Restaurant.review, author: Faker::Name.name)
+    end
+end
+
+
+puts "Created #{Movie.all.size} movies"
+puts "Created #{Review.all.size} reviews"

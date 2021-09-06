@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import Movies from "./components/Movies";
+import Home from "./components/Home"
 import { Switch, Route } from "react-router-dom";
 
 function App() {
@@ -9,9 +10,9 @@ function App() {
       <Navbar />
       <div>
         <Switch>
-          <Route exact path="/" component={() => <h1>Home</h1>} />
+          <Route exact path="/" component={Home} />
           <Route exact path="/movies" component={Movies} />
-
+          <Route component={() => {return(<h1>Page Not Found</h1>)}} />
         </Switch>
       </div>
     </>
