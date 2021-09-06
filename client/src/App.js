@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Movies from "./components/Movies";
 import Home from "./components/Home"
 import { Switch, Route } from "react-router-dom";
+import "./App.css"
 
 function App() {
   return (

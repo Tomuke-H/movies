@@ -54,7 +54,6 @@ const Movies = () => {
 
     return (
         <div>
-            <h1>MOVIES!</h1>
             <button onClick={() => setNewMovieForm(!newMovieForm)}>Add new Movie</button>
             {newMovieForm && <MovieForm createMovie={createMovie}/>}
             {renderMovies()}

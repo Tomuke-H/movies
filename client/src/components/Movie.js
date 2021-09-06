@@ -3,6 +3,7 @@ import axios from 'axios'
 import Review from './Review'
 import MovieForm from './MovieForm'
 import ReviewForm from './ReviewForm'
+import "./Movie.css"
 
 
 const Movie = ({movie, deleteMovie, updateMovie}) => {
@@ -67,12 +68,14 @@ const Movie = ({movie, deleteMovie, updateMovie}) => {
     }
 
     return (
-        <div>
+        <div className="movie-wrapper">
             <h1>{movie.title}</h1>
-            <h4>{movie.genre}</h4>
-            <button onClick={() => setEditForm(!editForm)}>{editForm ? "Hide Edit Form" : "Edit Movie"}</button>
-            <button onClick={() => deleteMovie(movie.id)}>Delete Movie</button>
-            <button onClick={() => handleReviewClick()}>{reviewDisplay ? "Hide Reviews" : "Show Reviews"}</button>
+            <h4>Genre: {movie.genre}</h4>
+            <div className="movie__button-wrapper">
+                <button className="movie__buttons" onClick={() => setEditForm(!editForm)}>{editForm ? "Hide Edit Form" : "Edit Movie"}</button>
+                <button className="movie__buttons" onClick={() => deleteMovie(movie.id)}>Delete Movie</button>
+                <button className="movie__buttons" onClick={() => handleReviewClick()}>{reviewDisplay ? "Hide Reviews" : "Reviews"}</button>
+            </div>
             {editForm && <MovieForm movie={movie} updateMovie={updateMovie} setEditForm={setEditForm}/>}
 
             {reviewDisplay && <button onClick={

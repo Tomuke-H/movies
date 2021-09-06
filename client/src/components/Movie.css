@@ -1,0 +1,21 @@
+.movie-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 5px;
+    border-color: #8860D0;
+    background-color: #5ab9ea;
+    color: white;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.movie__button-wrappers {
+    display: flex;
+    justify-content: center;
+}
+
+.movie__buttons {
+    width: 120px;
+}
+
