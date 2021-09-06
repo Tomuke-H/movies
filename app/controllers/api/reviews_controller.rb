@@ -6,12 +6,26 @@ class Api::ReviewsController < ApplicationController
     end
 
     def create
+        @review = @movie.reviews.new(review_params)
+        if(@review.save)
+            render json: @review
+        else
+            render json: {errors: @review.errors}, status: :unprocessable_entity
+        end
     end
 
     def update
+        @review = @movie.reviews.find(params[:id])
+        if(@review.update(review_params))
+            render json: @review
+        else
+            render json: {errors: @review.errors}, status: :unprocessable_entity
+        end
     end
 
     def destroy
+        @review = @movie.reviews.find(params[:id])
+        render json: @review.destroy
     end
 
     private

@@ -1,17 +1,23 @@
 import React, { useState} from 'react';
 
-const MovieForm = ({createMovie}) => {
-    const [title, setTitle] = useState('')
-    const [genre, setGenre] = useState('')
+const MovieForm = ({createMovie, updateMovie, movie, setEditForm}) => {
+    const [title, setTitle] = useState(movie ? movie.title : '')
+    const [genre, setGenre] = useState(movie ? movie.genre : '')
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            createMovie({title, genre})
-            setTitle('')
-            setGenre('')
+            if(movie) {
+                updateMovie({id: movie.id, title, genre})
+                setEditForm(false)
+            } else {
+                createMovie({title, genre})
+                setTitle('')
+                setGenre('')
+            }
         } catch (errors) {
             alert(errors)
+            console.log(errors.response)
         }
 
     }
@@ -23,7 +29,7 @@ const MovieForm = ({createMovie}) => {
                 <input value={title} onChange={(e) => setTitle(e.target.value)}/>
                 <p>Genre</p>
                 <input value={genre} onChange={(e) => setGenre(e.target.value)}/>
-                <button>Add</button>
+                <button>{movie ? "Update" : "Add"}</button>
             </form>
         </div>
     )

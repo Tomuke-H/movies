@@ -5,7 +5,7 @@ import MovieForm from './MovieForm';
 
 const Movies = () => {
     const [movies, setMovies] = useState([])
-    const [newMovieForm, setNewMovieForm] = useState(true)
+    const [newMovieForm, setNewMovieForm] = useState(false)
 
     useEffect(() => {
         getMovies();
@@ -26,6 +26,16 @@ const Movies = () => {
         }
     }
 
+    const updateMovie = async (movie) => {
+        try {
+            let res = await axios.put(`/api/movies/${movie.id}`, movie)
+            let newMovies = movies.map(m => m.id === res.data.id ? res.data : m)
+            setMovies(newMovies)
+        } catch (error) {
+            alert(error.errors)
+        }
+    }
+
     const deleteMovie = async (id) => {
         try {
             let res = await axios.delete(`api/movies/${id}`)
@@ -38,7 +48,7 @@ const Movies = () => {
 
     const renderMovies = () => {
         return movies.map(m => {
-            return <Movie deleteMovie={deleteMovie} movie={m} key={m.id}/>
+            return <Movie updateMovie={updateMovie} deleteMovie={deleteMovie} movie={m} key={m.id}/>
         })
     }
 
