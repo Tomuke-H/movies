@@ -82,13 +82,18 @@ const Movie = ({movie, deleteMovie, updateMovie}) => {
                 </div>
             </div>
 
-            {reviewDisplay && <button onClick={
-                () => setNewReviewForm(!newReviewForm)}>
+            {reviewDisplay && <button 
+                    className="new-review-button"
+                    onClick={() => setNewReviewForm(!newReviewForm)}>
                     {newReviewForm ? "Hide" : "Add Review"}
                 </button>
             }
 
-            {newReviewForm && <ReviewForm setEditForm={setNewReviewForm} createReview={createReview}/>}
+            {newReviewForm && <div className="new-review-wrapper">
+                <ReviewForm 
+                    setEditForm={setNewReviewForm} 
+                    createReview={createReview}
+                /> </div>}
             {reviewDisplay && renderReviews()}
         </div>
     )

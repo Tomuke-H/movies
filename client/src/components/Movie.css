@@ -47,3 +47,25 @@
     cursor: pointer;
     background-color: #252749;
 }
+
+.new-review-button {
+    width: 100px;
+    height: 40px;
+    background-color: #29648a;
+    color: white;
+    border: solid 3px;
+    border-color: #29648a;
+    transition: 1s ease;   
+}
+
+.new-review-button:hover {
+    border-color: #aaabb8;
+    background-color: #2e9cca;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.new-review-wrapper {
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.50) 0px 14px 28px, rgba(0, 0, 0, 0.45) 0px 10px 10px;
+}
