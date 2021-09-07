@@ -8,6 +8,10 @@
     width: 500px;
 }
 
+.review-wrapper {
+    width: 100%;
+}
+
 .text {
     padding: 20px;
 }

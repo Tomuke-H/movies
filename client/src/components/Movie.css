@@ -5,17 +5,45 @@
     background-color: #2e9cca;
     color: white;
     margin: 30px;
-    border-radius: 10px;
     width: 550px;
     box-shadow: rgba(0, 0, 0, 0.50) 0px 14px 28px, rgba(0, 0, 0, 0.45) 0px 10px 10px;
 }
 
-.movie__button-wrappers {
+.movie-card {
+    width: 100%;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.movie__title {
+    margin: 3px 3px 0px 3px;
+}
+
+.movie__info-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    margin: 5px 0px 5px 0px;
+}
+
+.movie__button-wrapper {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .movie__buttons {
-    width: 120px;
+    background-color: #2e9cca;
+    border: none;
+    color: white;
+    padding: 10px;
+    width: 150px;
 }
 
+.movie__buttons:hover {
+    cursor: pointer;
+    background-color: #252749;
+}

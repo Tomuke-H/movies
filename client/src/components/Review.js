@@ -6,7 +6,7 @@ const Review = ({review, deleteReview, updateReview}) => {
     const [editForm, setEditForm] = useState(false)
     return(
         <div className="review">
-            {!editForm && <div>
+            {!editForm && <div className="review-wrapper">
                 <h4 className="text">{review.text}</h4>
                 <div className="review__bottom">
                     <h4 className="author">{review.author}</h4>

@@ -69,14 +69,18 @@ const Movie = ({movie, deleteMovie, updateMovie}) => {
 
     return (
         <div className="movie-wrapper">
-            <h1>{movie.title}</h1>
-            <h4>Genre: {movie.genre}</h4>
-            <div className="movie__button-wrapper">
-                <button className="movie__buttons" onClick={() => setEditForm(!editForm)}>{editForm ? "Hide Edit Form" : "Edit Movie"}</button>
-                <button className="movie__buttons" onClick={() => deleteMovie(movie.id)}>Delete Movie</button>
-                <button className="movie__buttons" onClick={() => handleReviewClick()}>{reviewDisplay ? "Hide Reviews" : "Reviews"}</button>
+            <div className="movie-card">
+                {!editForm && <div className="movie__info-wrapper">
+                    <h1 className="movie__title">{movie.title}</h1>
+                    <h4>Genre: {movie.genre}</h4>
+                </div>}
+                {editForm && <MovieForm movie={movie} updateMovie={updateMovie} setEditForm={setEditForm}/>}
+                <div className="movie__button-wrapper">
+                    <button className="movie__buttons" onClick={() => setEditForm(!editForm)}>{editForm ? "Hide Edit Form" : "Edit Movie"}</button>
+                    <button className="movie__buttons" onClick={() => deleteMovie(movie.id)}>Delete Movie</button>
+                    <button className="movie__buttons" onClick={() => handleReviewClick()}>{reviewDisplay ? "Hide Reviews" : "Reviews"}</button>
+                </div>
             </div>
-            {editForm && <MovieForm movie={movie} updateMovie={updateMovie} setEditForm={setEditForm}/>}
 
             {reviewDisplay && <button onClick={
                 () => setNewReviewForm(!newReviewForm)}>
@@ -84,7 +88,7 @@ const Movie = ({movie, deleteMovie, updateMovie}) => {
                 </button>
             }
 
-            {newReviewForm && <ReviewForm createReview={createReview}/>}
+            {newReviewForm && <ReviewForm setEditForm={setNewReviewForm} createReview={createReview}/>}
             {reviewDisplay && renderReviews()}
         </div>
     )
