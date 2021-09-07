@@ -1,0 +1,56 @@
+.review-form {
+    margin: 0px;
+    background-color: #464866;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.review-form__wrapper {
+    width: 100%;
+}
+
+.text-input {
+    padding: 5px;
+    width: 400px;
+    height: 160px;
+    color: white;
+    background-color: #464866;
+    border: solid 2px;
+    border-color: #aaabb8
+}
+
+.author-input {
+    color: white;
+    margin: 0px;
+    background-color: #464866;
+    border: solid 2px;
+    border-color: #aaabb8;
+    padding: 4px;
+}
+
+.review-form__bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 0px 0px 10px;
+}
+
+.review-form__button-wrapper {
+    display: flex;
+}
+
+.review-form__buttons {
+    background-color: #464866;
+    border: none;
+    color: white;
+    padding: 10px;
+    width: 150px;
+}
+
+.review-form__buttons:hover {
+    cursor: pointer;
+    background-color: #2e9cca;
+}

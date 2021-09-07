@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios'
 import Movie from './Movie';
 import MovieForm from './MovieForm';
+import './Movies.css'
 
 const Movies = () => {
     const [movies, setMovies] = useState([])
@@ -56,7 +57,9 @@ const Movies = () => {
         <div>
             <button onClick={() => setNewMovieForm(!newMovieForm)}>Add new Movie</button>
             {newMovieForm && <MovieForm createMovie={createMovie}/>}
-            {renderMovies()}
+            <div className="movie-list">
+                {renderMovies()}
+            </div>
         </div>
     );
 };

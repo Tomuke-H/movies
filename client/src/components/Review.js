@@ -6,10 +6,16 @@ const Review = ({review, deleteReview, updateReview}) => {
     const [editForm, setEditForm] = useState(false)
     return(
         <div className="review">
-            <h4>{review.text}</h4>
-            <h4>{review.author}</h4>
-            <button onClick={() => deleteReview(review.id)}>Delete Review</button>
-            <button onClick={() => setEditForm(!editForm)}>{editForm ? "Hide" : "Edit Review"}</button>
+            {!editForm && <div>
+                <h4 className="text">{review.text}</h4>
+                <div className="review__bottom">
+                    <h4 className="author">{review.author}</h4>
+                    <div className="review__button-wrapper">
+                        <div className="review__buttons" onClick={() => deleteReview(review.id)}>Delete Review</div>
+                        <div className="review__buttons" onClick={() => setEditForm(!editForm)}>{editForm ? "Hide" : "Edit Review"}</div>
+                    </div>
+                </div> 
+            </div>}
             {editForm && <ReviewForm review={review} updateReview={updateReview} setEditForm={setEditForm}/>}
         </div>
     )

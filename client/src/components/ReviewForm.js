@@ -1,4 +1,5 @@
 import React, { useState} from 'react';
+import './ReviewForm.css'
 
 const ReviewForm = ({createReview, updateReview, review, setEditForm}) => {
     const [text, setText] = useState(review ? review.text : '')
@@ -23,13 +24,16 @@ const ReviewForm = ({createReview, updateReview, review, setEditForm}) => {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <p>Text</p>
-                <textarea value={text} onChange={(e) => setText(e.target.value)}/>
-                <p>Author</p>
-                <input value={author} onChange={(e) => setAuthor(e.target.value)}/>
-                <button>{review ? "Update" : "Add"}</button>
+        <div className="review-form__wrapper">
+            <form className="review-form" onSubmit={handleSubmit}>
+                <textarea className="text-input" value={text} onChange={(e) => setText(e.target.value)}/>
+                <div className="review-form__bottom">
+                    <input className="author-input" value={author} onChange={(e) => setAuthor(e.target.value)}/>
+                    <div className="review-form__button-wrapper">
+                        <button className="review-form__buttons">{review ? "Update" : "Add"}</button>
+                        <div className="review-form__buttons" onClick={() => setEditForm(false)}>Cancel</div>
+                    </div>
+                </div>
             </form>
         </div>
     )

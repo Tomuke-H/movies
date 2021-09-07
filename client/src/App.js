@@ -7,7 +7,7 @@ import "./App.css"
 
 function App() {
   return (
-    <>
+    <div className="App">
       <Navbar />
       <div>
         <Switch>
@@ -16,7 +16,7 @@ function App() {
           <Route component={() => {return(<h1>Page Not Found</h1>)}} />
         </Switch>
       </div>
-    </>
+    </div>
   );
 }
 

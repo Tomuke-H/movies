@@ -1,6 +1,43 @@
 .review {
-    border: solid 5px;
-    border-color: #5680e9;
     margin: 10px;
-    padding: 5px;
+    background-color: #464866;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.50) 0px 14px 28px, rgba(0, 0, 0, 0.45) 0px 10px 10px;
+    width: 500px;
+}
+
+.text {
+    padding: 20px;
+}
+
+.author {
+    color: #aaabb8;
+    margin: 0px;
+}
+
+.review__bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 0px 0px 10px;
+}
+
+.review__button-wrapper {
+    display: flex;
+}
+
+.review__buttons {
+    background-color: #464866;
+    color: white;
+    padding: 10px;
+    width: 150px;
+}
+
+.review__buttons:hover {
+    cursor: pointer;
+    background-color: #2e9cca;
 }
