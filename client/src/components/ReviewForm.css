@@ -5,6 +5,8 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    animation-name: appear;
+    animation-duration: 1s;
 }
 .review-form__wrapper {
     width: 100%;

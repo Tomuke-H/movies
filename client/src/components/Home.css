@@ -1,0 +1,50 @@
+.card-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
+    height: 1200px;
+}
+
+.card1 {
+    background-color: #29648a;
+    height: 200px;
+    width: 200px;
+    color: white;
+    margin: 40px;
+    padding: 10px;
+    animation-name: appear;
+    animation-duration: 2s;
+}
+
+.card2 {
+    background-color: #29648a;
+    height: 200px;
+    width: 200px;
+    color: white;
+    margin: 40px;
+    padding: 10px;
+    animation-name: appear;
+    animation-duration: 3s;
+}
+
+.card3 {
+    background-color: #29648a;
+    height: 200px;
+    width: 200px;
+    color: white;
+    margin: 40px;
+    padding: 10px;
+    animation-name: appear;
+    animation-duration: 4s;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+

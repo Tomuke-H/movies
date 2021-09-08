@@ -7,6 +7,18 @@
     margin: 30px;
     width: 550px;
     box-shadow: rgba(0, 0, 0, 0.50) 0px 14px 28px, rgba(0, 0, 0, 0.45) 0px 10px 10px;
+    animation-name: appear;
+    animation-duration: .75s;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0%;
+    }
+
+    to {
+        opacity: 100%;
+    }
 }
 
 .movie-card {

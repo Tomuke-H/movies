@@ -7,6 +7,8 @@
     justify-content: space-between;
     width: 100%;
     height: 100%;
+    animation-name: appear;
+    animation-duration: 1s;
 }
 
 .fill-the-space {
